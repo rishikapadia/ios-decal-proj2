@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -18,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Correct Guesses: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-c2-hzn">
-                                <rect key="frame" x="20" y="530" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-f9-SH9">
                                 <rect key="frame" x="454" y="62" width="46" height="30"/>
                                 <state key="normal" title="Guess"/>
@@ -44,7 +38,7 @@
                                     <constraint firstAttribute="width" secondItem="13V-FF-MNI" secondAttribute="height" multiplier="1:1" id="Il7-Hp-clQ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect Guesses: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CE-MF-tXR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guesses: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CE-MF-tXR">
                                 <rect key="frame" x="20" y="559" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
@@ -65,22 +59,18 @@
                             <constraint firstItem="vlT-qr-LPh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JzO-PG-cZ0"/>
                             <constraint firstItem="13V-FF-MNI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KA6-4Y-E7R"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5CE-MF-tXR" secondAttribute="trailing" id="N1a-E8-S8b"/>
-                            <constraint firstItem="5CE-MF-tXR" firstAttribute="top" secondItem="lnb-c2-hzn" secondAttribute="bottom" constant="8" id="N20-d4-OZY"/>
                             <constraint firstItem="kTK-f9-SH9" firstAttribute="trailing" secondItem="13V-FF-MNI" secondAttribute="trailing" id="NyG-1T-0cb"/>
                             <constraint firstItem="kTK-f9-SH9" firstAttribute="leading" secondItem="akl-Pi-gPO" secondAttribute="trailing" constant="8" id="RV0-Ng-MFc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="13V-FF-MNI" secondAttribute="trailing" constant="10" id="SNm-xW-N6I"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="lnb-c2-hzn" secondAttribute="leading" id="WW4-vY-Img"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lnb-c2-hzn" secondAttribute="trailing" id="XZT-HO-bgP"/>
                             <constraint firstItem="akl-Pi-gPO" firstAttribute="baseline" secondItem="kTK-f9-SH9" secondAttribute="baseline" id="XfE-HH-jd5"/>
                             <constraint firstAttribute="leadingMargin" secondItem="vlT-qr-LPh" secondAttribute="leading" id="g4F-0W-qfZ"/>
                             <constraint firstItem="13V-FF-MNI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qRQ-mV-ntg"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="correct" destination="lnb-c2-hzn" id="yx6-Nb-Vt4"/>
                         <outlet property="guess" destination="akl-Pi-gPO" id="Zww-be-gFg"/>
+                        <outlet property="guesses" destination="5CE-MF-tXR" id="6qf-xL-pMt"/>
                         <outlet property="image" destination="13V-FF-MNI" id="yUr-Gr-Top"/>
-                        <outlet property="incorrect" destination="5CE-MF-tXR" id="3Zi-Qj-PAK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -13,9 +13,14 @@ class Hangman {
     var answer: String?
     var knownString: String?
     var guessedLetters: NSMutableArray?
+    var images: [String]
     
     init() {
         words = HangmanWords()
+        images = [String]()
+        for index in 1...7 {
+            images.append("hangman\(index)")
+        }
     }
     
     func start() {
