@@ -49,20 +49,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Word So Far" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kr-rk-JwS">
+                                <rect key="frame" x="20" y="530" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5CE-MF-tXR" secondAttribute="bottom" constant="20" id="4di-Zh-3AJ"/>
+                            <constraint firstItem="5CE-MF-tXR" firstAttribute="top" secondItem="1kr-rk-JwS" secondAttribute="bottom" constant="8" id="6Wq-AC-zZc"/>
                             <constraint firstAttribute="leadingMargin" secondItem="5CE-MF-tXR" secondAttribute="leading" id="9Jz-q4-odl"/>
                             <constraint firstItem="13V-FF-MNI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="FY6-il-3M1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1kr-rk-JwS" secondAttribute="trailing" id="HA6-0l-zKN"/>
                             <constraint firstItem="13V-FF-MNI" firstAttribute="top" secondItem="kTK-f9-SH9" secondAttribute="bottom" constant="8" id="Ih5-jP-tYK"/>
                             <constraint firstItem="vlT-qr-LPh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JzO-PG-cZ0"/>
                             <constraint firstItem="13V-FF-MNI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KA6-4Y-E7R"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5CE-MF-tXR" secondAttribute="trailing" id="N1a-E8-S8b"/>
                             <constraint firstItem="kTK-f9-SH9" firstAttribute="trailing" secondItem="13V-FF-MNI" secondAttribute="trailing" id="NyG-1T-0cb"/>
+                            <constraint firstItem="1kr-rk-JwS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ROm-v1-Nuy"/>
                             <constraint firstItem="kTK-f9-SH9" firstAttribute="leading" secondItem="akl-Pi-gPO" secondAttribute="trailing" constant="8" id="RV0-Ng-MFc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="13V-FF-MNI" secondAttribute="trailing" constant="10" id="SNm-xW-N6I"/>
                             <constraint firstItem="akl-Pi-gPO" firstAttribute="baseline" secondItem="kTK-f9-SH9" secondAttribute="baseline" id="XfE-HH-jd5"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="1kr-rk-JwS" secondAttribute="leading" id="YWD-NU-KYN"/>
                             <constraint firstAttribute="leadingMargin" secondItem="vlT-qr-LPh" secondAttribute="leading" id="g4F-0W-qfZ"/>
                             <constraint firstItem="13V-FF-MNI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qRQ-mV-ntg"/>
                         </constraints>
@@ -71,6 +81,7 @@
                         <outlet property="guess" destination="akl-Pi-gPO" id="Zww-be-gFg"/>
                         <outlet property="guesses" destination="5CE-MF-tXR" id="6qf-xL-pMt"/>
                         <outlet property="image" destination="13V-FF-MNI" id="yUr-Gr-Top"/>
+                        <outlet property="wordSoFar" destination="1kr-rk-JwS" id="2TK-1p-S79"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

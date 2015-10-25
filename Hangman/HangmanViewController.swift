@@ -16,6 +16,7 @@ class HangmanViewController: UIViewController {
     @IBOutlet weak var guess: UITextField!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var guesses: UILabel!
+    @IBOutlet weak var wordSoFar: UILabel!
     
     @IBAction func newGame(sender: AnyObject) {
         game.start()
@@ -24,19 +25,53 @@ class HangmanViewController: UIViewController {
     }
     
     @IBAction func guessPressed(sender: AnyObject) {
-        if guess.text!.characters.count != 1 || numWrong >= 7 {
+        if (guess.text!.characters.count != 1 || numWrong >= 6) {
+            guess.text = ""
             return
         }
-        if (game.guessLetter(guess.text!)) {
-            //already guessed this letter, or not in answer
+        if (!game.guessLetter(guess.text!.uppercaseString)) {
+            //this letter is not in the answer
             numWrong!++
         }
         updateViews()
+        
+        if (game.isSolved() || numWrong >= 6) {
+            endGameState()
+        }
     }
     
     func updateViews() {
-        //guesses.text = "Guesses: " + game.guesses()
+        guess.text = ""
+        guesses.text = "Guesses: \(game.guesses())"
+        wordSoFar.text = game.knownString
         image.image = UIImage(named: game.images[numWrong])!
+    }
+    
+    func endGameState() {
+        var title = ""
+        var message = ""
+        if game.isSolved() {
+            title = "Congratulations!"
+            message = "You solved the puzzle!"
+        } else if (numWrong >= 6) {
+            wordSoFar.text = game.answer
+            title = "Sorry!"
+            message = "You failed to solve the puzzle..."
+        }
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // ...
+        }
+        let OKAction = UIAlertAction(title: "New Game", style: .Default) { (action) in
+            self.newGame(self)
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(OKAction)
+        
+        self.presentViewController(alertController, animated: true) {
+            // ...
+        }
     }
     
     

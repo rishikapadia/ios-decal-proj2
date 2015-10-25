@@ -28,7 +28,8 @@ class Hangman {
         answer = word
         knownString = ""
         for (var i = 0; i < answer!.characters.count; i += 1) {
-            if (word as NSString).substringWithRange(NSMakeRange(i, 1)) == " " {
+            //if (word as NSString).substringWithRange(NSMakeRange(i, 1)) == " " {
+            if (word[word.startIndex.advancedBy(i)] == " ") {
                 knownString = knownString! + " "
             } else {
                 knownString = knownString! + "_"
@@ -57,12 +58,22 @@ class Hangman {
     }
     
     func guesses() -> String {
-        if guessedLetters!.count > 0 {
+        if guessedLetters!.count == 0 {
             return ""
         }
         var result: String = guessedLetters!.objectAtIndex(0) as! String
-        for (var i = 0; i < guessedLetters!.count; i += 1) {
-            result = result + ", \(guessedLetters?.objectAtIndex(i))"
+        for (var i = 1; i < guessedLetters!.count; i += 1) {
+            result = result + ", \(guessedLetters!.objectAtIndex(i))"
+        }
+        return result
+    }
+    
+    func isSolved() -> Bool {
+        var result = true
+        for (var i = 0; i < knownString!.characters.count; i += 1) {
+            if knownString![knownString!.startIndex.advancedBy(i)] == "_" {
+                result = false
+            }
         }
         return result
     }
