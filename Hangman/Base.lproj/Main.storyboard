@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hangman View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HangmanViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Correct Guesses: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-c2-hzn">
+                                <rect key="frame" x="20" y="530" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-f9-SH9">
+                                <rect key="frame" x="454" y="62" width="46" height="30"/>
+                                <state key="normal" title="Guess"/>
+                                <connections>
+                                    <action selector="guessPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JdM-oV-fMg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlT-qr-LPh">
+                                <rect key="frame" x="20" y="20" width="76" height="30"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bEd-GN-B3F"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13V-FF-MNI">
+                                <rect key="frame" x="100" y="100" width="400" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="13V-FF-MNI" secondAttribute="height" multiplier="1:1" id="Il7-Hp-clQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect Guesses: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CE-MF-tXR">
+                                <rect key="frame" x="20" y="559" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Guess a letter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akl-Pi-gPO">
+                                <rect key="frame" x="342" y="63" width="104" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5CE-MF-tXR" secondAttribute="bottom" constant="20" id="4di-Zh-3AJ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="5CE-MF-tXR" secondAttribute="leading" id="9Jz-q4-odl"/>
+                            <constraint firstItem="13V-FF-MNI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="FY6-il-3M1"/>
+                            <constraint firstItem="13V-FF-MNI" firstAttribute="top" secondItem="kTK-f9-SH9" secondAttribute="bottom" constant="8" id="Ih5-jP-tYK"/>
+                            <constraint firstItem="vlT-qr-LPh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JzO-PG-cZ0"/>
+                            <constraint firstItem="13V-FF-MNI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KA6-4Y-E7R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5CE-MF-tXR" secondAttribute="trailing" id="N1a-E8-S8b"/>
+                            <constraint firstItem="5CE-MF-tXR" firstAttribute="top" secondItem="lnb-c2-hzn" secondAttribute="bottom" constant="8" id="N20-d4-OZY"/>
+                            <constraint firstItem="kTK-f9-SH9" firstAttribute="trailing" secondItem="13V-FF-MNI" secondAttribute="trailing" id="NyG-1T-0cb"/>
+                            <constraint firstItem="kTK-f9-SH9" firstAttribute="leading" secondItem="akl-Pi-gPO" secondAttribute="trailing" constant="8" id="RV0-Ng-MFc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="13V-FF-MNI" secondAttribute="trailing" constant="10" id="SNm-xW-N6I"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="lnb-c2-hzn" secondAttribute="leading" id="WW4-vY-Img"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lnb-c2-hzn" secondAttribute="trailing" id="XZT-HO-bgP"/>
+                            <constraint firstItem="akl-Pi-gPO" firstAttribute="baseline" secondItem="kTK-f9-SH9" secondAttribute="baseline" id="XfE-HH-jd5"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="vlT-qr-LPh" secondAttribute="leading" id="g4F-0W-qfZ"/>
+                            <constraint firstItem="13V-FF-MNI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qRQ-mV-ntg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="correct" destination="lnb-c2-hzn" id="yx6-Nb-Vt4"/>
+                        <outlet property="guess" destination="akl-Pi-gPO" id="Zww-be-gFg"/>
+                        <outlet property="image" destination="13V-FF-MNI" id="yUr-Gr-Top"/>
+                        <outlet property="incorrect" destination="5CE-MF-tXR" id="3Zi-Qj-PAK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="255" y="339"/>
+        </scene>
+    </scenes>
+</document>
